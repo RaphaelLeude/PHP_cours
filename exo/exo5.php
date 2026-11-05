@@ -17,13 +17,12 @@
  <br>
 
  <?php
-    $jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+    $tableauJours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 
-    echo "<ul>";
-    foreach ($jours as $jour) {
-        echo "<li>$jour</li>";
+    foreach ($tableauJours as $jour) {
+        echo $jour . "<br>";
     }
-    echo "</ul>";
+    
     ?>
 
 
@@ -48,7 +47,14 @@
  <strong>Résultat :</strong>
 
  <?php
-    // Votre code ici
+    $tableauMois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"];
+
+    $indexJour = date("N")-1;
+    $indexMois = date("n")-1;
+    $annee = date("Y");
+    $numJour = date("j");
+
+    echo "Nous somme le $tableauJours[$indexJour] $numJour $tableauMois[$indexMois] $annee";
     ?>
 
  <h2>Exercice 3 </h2>
@@ -64,8 +70,15 @@ $tab= [
  <strong>Résultat :</strong>
 
  <?php
-    // Votre code ici
+    $tab = [
+        "Dupont" => ["Paul", "Paris", 27],
+        "Schmoll" => ["Kirk", "Berlin", 35],
+        "Smith" => ["Stan", "Londres", 45]
+    ];
 
+    foreach ($tab as $nom => $value) {
+        echo " $value[0] $nom a $value[2] et habite à $value[1] <br/>";
+    }
     ?>
 
 

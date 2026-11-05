@@ -26,17 +26,6 @@
  <strong>Résultat :</strong>
 
  <?php
-   // 1) Sans boucle
-   echo "<h3>1) Sans boucle</h3>";
-   echo "5! <br />";
-   echo "4! <br />";
-   echo "3! <br />";
-   echo "2! <br />";
-   echo "1! <br />";
-   echo "BONNE ANNÉE !!! <br /><br />";
-
-   // 2) Avec une boucle WHILE
-   echo "<h3>2) Avec WHILE</h3>";
    $i = 5;
    while ($i > 0) {
       echo $i . "! <br />";
@@ -69,29 +58,19 @@
 
  <?php
 
-   $x = 10;
+   $limit = 6;
    $somme = 0;
 
-   // 1) Afficher 1 + 2 + 3 + ... + $x
-   echo "<h3>1) Affichage de l'addition</h3>";
-   for ($i = 1; $i <= $x; $i++) {
-      echo $i;
-      if ($i < $x) {
-         echo " + ";
-      }
-   }
-   echo "<br /><br />";
+   for ($i = 1; $i <= $limit; $i++){
+      $somme = $somme + $i;
+      echo "$i";
 
-   // 2) Même phrase avec le résultat de la somme
-   echo "<h3>2) Avec le résultat</h3>";
-   for ($i = 1; $i <= $x; $i++) {
-      $somme += $i;
-      echo $i;
-      if ($i < $x) {
+      if ($i == $limit) {
+         echo "= $somme";
+      } else {
          echo " + ";
       }
    }
-   echo " = " . $somme . "<br />";
    ?>
 
  <h2>Exercice 3 :</h2>
@@ -115,12 +94,11 @@
 
  <?php
 
-   // Boucle externe : les chiffres de 1 à 3
    for ($i = 1; $i <= 3; $i++) {
-      echo "<h3>Table de " . $i . "</h3>";
-      // Boucle interne : multiplier par 1 à 9
+
       for ($j = 1; $j <= 9; $j++) {
-         echo $i . "x" . $j . " = " . ($i * $j) . "<br />";
+         $calcul = $i * $j;
+         echo "$i * $j = $calcul <br/>";
       }
    }
 
