@@ -19,7 +19,32 @@ ob_start();
 
 <?php
 
-// Votre code ici
+function afficherTable($n = 3, $min = 1, $max = 9)
+{
+    echo '<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">';
+
+    for ($i = 1; $i <= $n; $i++) {
+        echo '<div style="border: 2px solid black; padding: 10px; min-width: 130px;">';
+        echo "<h3 style=\"margin: 0 0 8px; text-align: center; border-bottom: 1px solid black;\">Table de $i</h3>";
+
+        for ($j = $min; $j <= $max; $j++) {
+            $calcul = $i * $j;
+            echo "$i x $j = <strong>$calcul</strong><br />";
+        }
+
+        echo '</div>';
+    }
+
+    echo '</div>';
+}
+
+afficherTable();
+
+afficherTable(5);
+
+afficherTable(10, 1, 10);
+
+afficherTable(4, 5, 12);
 
 ?>
 
@@ -33,6 +58,25 @@ ob_start();
     <li>Maintenant ajouter le <strong>typage</strong> sur les param&egrave;tres et sur le retour de la fonction</li>
 </ol>
 
+
+<?php
+
+function estPair(int $n): bool
+{
+    return $n % 2 == 0;
+}
+
+$nombres = [4, 7, 0, 15, 28];
+
+foreach ($nombres as $nombre) {
+    if (estPair($nombre)) {
+        echo "$nombre est pair <br />";
+    } else {
+        echo "$nombre est impair <br />";
+    }
+}
+
+?>
 
 <?php $content = ob_get_clean(); ?>
 
